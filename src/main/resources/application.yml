@@ -1,0 +1,5 @@
+server:
+  port: 8080
+  serverlet:
+    context-path: /bootcamp
+    
