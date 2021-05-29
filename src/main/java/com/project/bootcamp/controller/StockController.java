@@ -69,6 +69,5 @@ public class StockController {
         StockDTO selecionado = list.stream().filter(x -> x.getId().compareTo(id) == 0).findFirst().get();
 
         return ResponseEntity.ok(selecionado);
-
     }
 }
