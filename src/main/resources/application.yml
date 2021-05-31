@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:${DATABASE_URL}
+    url: ${DATABASE_URL}
   jpa:
     show-sql: true
     database-plataform: org.hibernate.dialect.PostgreSQLDialect
@@ -9,6 +9,6 @@ spring:
     hibernate:
       ddl-auto: none
 
-# application:
-#   title: Santander Dev Week
-#   version: "1.0"
+application:
+  title: Santander Dev Week
+  version: "1.0"
