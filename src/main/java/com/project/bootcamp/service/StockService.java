@@ -1,8 +1,9 @@
 package com.project.bootcamp.service;
 
+import java.util.List;
 import java.util.Optional;
 
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.project.bootcamp.exceptions.BusinessException;
 import com.project.bootcamp.mapper.StockMapper;
@@ -49,5 +50,10 @@ public class StockService {
         repository.save(stock);
 
         return mapper.toDto(stock);
+    }
+
+    @Transactional(readOnly = true)
+    public List<StockDTO> findAll() {
+        return mapper.toDto(repository.findAll());
     }
 }
