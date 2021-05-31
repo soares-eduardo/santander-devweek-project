@@ -1,5 +1,6 @@
 package com.project.bootcamp.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,7 +14,6 @@ import com.project.bootcamp.model.dto.StockDTO;
 import com.project.bootcamp.repository.StockRepository;
 import com.project.bootcamp.util.MessageUtils;
 
-import org.hibernate.annotations.NotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -58,7 +58,7 @@ public class StockService {
     public StockDTO delete(Long id) {
         StockDTO dto = this.findById(id);
         repository.deleteById(dto.getId());
-        
+
         return dto;
     }
 
@@ -70,5 +70,10 @@ public class StockService {
     @Transactional(readOnly = true)
     public StockDTO findById(Long id) {
         return repository.findById(id).map(mapper::toDto).orElseThrow(NotFoundException::new);
+    }
+
+    @Transactional(readOnly = true)
+    public List<StockDTO> findByToday() {
+        return repository.findByToday(LocalDate.now()).map(mapper::toDto).orElseThrow(NotFoundException::new);
     }
 }

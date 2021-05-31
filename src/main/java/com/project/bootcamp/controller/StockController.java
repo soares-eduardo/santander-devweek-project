@@ -1,7 +1,5 @@
 package com.project.bootcamp.controller;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -9,6 +7,7 @@ import javax.validation.Valid;
 import com.project.bootcamp.model.dto.StockDTO;
 import com.project.bootcamp.service.StockService;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -51,5 +50,10 @@ public class StockController {
     @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<StockDTO> delete(@PathVariable Long id) {
         return ResponseEntity.ok(service.delete(id));
+    }
+
+    @GetMapping(value = "/today", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<StockDTO>> findByToday() {
+        return ResponseEntity.ok(service.findByToday());
     }
 }
