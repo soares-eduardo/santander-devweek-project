@@ -7,10 +7,10 @@ spring:
   jpa:
     show-sql: true
     database-plataform: org.hibernate.dialect.PostgreSQLDialect
-    generate-ddl: true
+    generate-ddl: false
     hibernate:
       ddl-auto: none
 
 application:
   title: Santander Dev Week
-  version: "1.0"
+  version: "1"
