@@ -15,3 +15,4 @@ spring:
 
 application:
   title: Santander Dev Week
+  version: "1.0"
