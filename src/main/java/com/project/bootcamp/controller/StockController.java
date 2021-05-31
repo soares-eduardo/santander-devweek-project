@@ -44,27 +44,6 @@ public class StockController {
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<StockDTO> findById(@PathVariable Long id) {
-
-        List<StockDTO> list = new ArrayList<>();
-        StockDTO stock1 = new StockDTO();
-
-        stock1.setId(1L);
-        stock1.setName("Magazine Luiza");
-        stock1.setPrice(10D);
-        stock1.setDate(LocalDate.now());
-
-        StockDTO stock2 = new StockDTO();
-
-        stock2.setId(2L);
-        stock2.setName("Ponto Frio");
-        stock2.setPrice(10D);
-        stock2.setDate(LocalDate.now());
-
-        list.add(stock1);
-        list.add(stock2);
-
-        StockDTO selecionado = list.stream().filter(x -> x.getId().compareTo(id) == 0).findFirst().get();
-
-        return ResponseEntity.ok(selecionado);
+        return ResponseEntity.ok(service.findById(id));
     }
 }

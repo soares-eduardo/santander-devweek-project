@@ -6,12 +6,14 @@ import java.util.Optional;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.project.bootcamp.exceptions.BusinessException;
+import com.project.bootcamp.exceptions.NotFoundException;
 import com.project.bootcamp.mapper.StockMapper;
 import com.project.bootcamp.model.Stock;
 import com.project.bootcamp.model.dto.StockDTO;
 import com.project.bootcamp.repository.StockRepository;
 import com.project.bootcamp.util.MessageUtils;
 
+import org.hibernate.annotations.NotFound;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -55,5 +57,10 @@ public class StockService {
     @Transactional(readOnly = true)
     public List<StockDTO> findAll() {
         return mapper.toDto(repository.findAll());
+    }
+
+    @Transactional(readOnly = true)
+    public StockDTO findById(Long id) {
+        return repository.findById(id).map(mapper::toDto).orElseThrow(NotFoundException::new);
     }
 }
