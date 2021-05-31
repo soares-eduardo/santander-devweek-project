@@ -9,6 +9,6 @@ spring:
     hibernate:
       ddl-auto: none
 
-application:
-  title: Santander Dev Week
-  version: "1.0"
+# application:
+#   title: Santander Dev Week
+#   version: "1.0"
