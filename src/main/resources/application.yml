@@ -1,4 +1,6 @@
-runtime: java11
+java:
+  runtime:
+    version: 11
 
 spring:
   datasource:
