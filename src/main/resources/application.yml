@@ -1,6 +1,5 @@
 java:
-  runtime:
-    version: 11
+  runtime: java11
 
 spring:
   datasource:
@@ -11,7 +10,7 @@ spring:
   jpa:
     show-sql: true
     database-plataform: org.hibernate.dialect.PostgreSQLDialect
-    generate-ddl: false
+    generate-ddl: true
     hibernate:
       ddl-auto: none
 
