@@ -7,4 +7,4 @@ API REST para criação, alteração, exclusão e busca de ativos financeiros.
 - PostgreSQL;
 
 ## Como utilizar
-A aplicação esta hospedada no Heroku e pode ser acessada com o link a seguir: https://santander-devweek-eduardo.herokuapp.com/swagger-ui.html
+A aplicação esta hospedada no Heroku e pode ser acessada com o pelo link a seguir: https://santander-devweek-eduardo.herokuapp.com/swagger-ui.html
