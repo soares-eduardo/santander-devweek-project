@@ -1,7 +1,7 @@
 # Santander Dev Week - Bootcamp DIO
 API REST to create, update, delete and select financial stocks.
 
-## Técnologias Usadas
+## Technologies
 - Java;
 - Spring Boot;
 - PostgreSQL;
