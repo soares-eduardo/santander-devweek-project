@@ -4,7 +4,7 @@ REST API to create, update, delete and select financial stocks. This project was
 
 ## Technologies
 
-- Java 1.8;
+- Java 8;
 - Spring Boot 2.4.6;
 - PostgreSQL;
 
